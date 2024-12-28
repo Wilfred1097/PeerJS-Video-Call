@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeerJS Video Call</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #videos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        video {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 480px;
+        }
+        @media (max-width: 767px) {
+            #videos {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">PeerJS Video Call</h1>
+        <div class="text-center mt-3">
+            <div class="form-group">
+                <label for="peerId">Your Peer ID</label>
+                <input type="text" id="peerId" class="form-control" readonly>
+            </div>
+        </div>
+        <div id="videos" class="mt-4">
+            <div>
+                <h5 class="text-center">Local Video</h5>
+                <video id="localVideo" autoplay playsinline></video>
+            </div>
+            <div>
+                <h5 class="text-center">Remote Video</h5>
+                <video id="remoteVideo" autoplay playsinline></video>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <div class="form-group">
+                <label for="connectToPeerId">Connect to Peer ID</label>
+                <input type="text" id="connectToPeerId" class="form-control" placeholder="Enter the peer ID to connect to">
+            </div>
+            <button id="connectButton" class="btn btn-primary">Connect</button>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Include PeerJS -->
+    <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
