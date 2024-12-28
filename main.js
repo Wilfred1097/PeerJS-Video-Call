@@ -41,3 +41,13 @@ connectButton.addEventListener('click', () => {
         remoteVideo.srcObject = remoteStream;
     });
 });
+
+// Show SweetAlert instruction popup on page load
+window.addEventListener('load', () => {
+    Swal.fire({
+        title: 'Welcome to PeerJS Video Call!',
+        text: 'To start a video call, copy your Peer ID and share it with your friend. Then, enter their Peer ID in the input below and click "Connect" to start the call.',
+        icon: 'info',
+        confirmButtonText: 'Got it!'
+    });
+});
