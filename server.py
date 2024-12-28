@@ -36,7 +36,7 @@ def start_websocket_server():
         print(f"Message received from {client['id']}: {message}")
         server.send_message_to_all(message)
 
-    ws_server = WebsocketServer(ws_port)
+    ws_server = WebsocketServer(ws_port, host="")
     ws_server.set_fn_new_client(new_client)
     ws_server.set_fn_client_left(client_left)
     ws_server.set_fn_message_received(message_received)
