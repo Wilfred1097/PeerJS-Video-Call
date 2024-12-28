@@ -7,7 +7,7 @@ const connectToPeerIdInput = document.getElementById('connectToPeerId');
 let localStream;
 let peer;
 
-// Get the local media stream
+// Get the local media stream, including audio
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     .then(stream => {
         localStream = stream;
